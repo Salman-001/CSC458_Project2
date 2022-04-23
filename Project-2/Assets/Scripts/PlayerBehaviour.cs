@@ -19,6 +19,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     //Audio
     public AudioSource movementAudio;
+    public AudioClip idle;
+    public AudioClip moving;
+    public float pitchRange = 1f;
     
 
     // Start is called before the first frame update
@@ -35,6 +38,7 @@ public class PlayerBehaviour : MonoBehaviour
         Move();
         Rotate();
         resetPos();
+        movementSound();
         
     }
 
@@ -66,6 +70,23 @@ public class PlayerBehaviour : MonoBehaviour
         gameObject.transform.position = originalPos;
         gameObject.transform.rotation = Quaternion.Euler(0,0,0);
 
+        }
+
+    }
+
+    private void movementSound(){
+
+        if(Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d") || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)){
+
+            if(movementAudio.clip == idle){
+                movementAudio.clip = moving;
+               // movementAudio.pitch = Random.Range(movementAudio.pitch - pitchRange, movementAudio.pitch + pitchRange);
+                movementAudio.Play();
+            }
+
+        }else{
+            movementAudio.clip = idle;
+            movementAudio.Play();
         }
 
     }
