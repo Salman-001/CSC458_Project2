@@ -14,4 +14,20 @@ public class AmmoBox : MonoBehaviour
         Debug.Log(ammoBoxType.ammoWeight);
         
     }
+
+    void Update() {
+    }
+
+    private void OnTriggerEnter(Collider other) {
+
+        
+        if(other.gameObject.tag == "Player"){
+            
+            // FindObjectOfType<Player>().health += ammoBoxType.ammoWeight;
+            Debug.Log("Player hit me");
+            Destroy(gameObject);
+
+        }
+
+    }
 }

@@ -76,7 +76,6 @@ public class PlayerBehaviour : MonoBehaviour
         if(Input.GetKey("w") || Input.GetKey("s") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)){
 
 
-            // FindObjectOfType<AudioManager>().Stop("Idle");
             if(isMoving == false){
                 FindObjectOfType<AudioManager>().Play("Driving");
                 isMoving = true;
@@ -93,9 +92,9 @@ public class PlayerBehaviour : MonoBehaviour
                 isIdle = true;
             }
      
-            // FindObjectOfType<AudioManager>().Play("Idle");
         }
 
+        //Starts and stops the music by pressing m
         if(Input.GetKeyDown("m")){
             
             if(isMuted == false){
