@@ -53,6 +53,8 @@
 
 </table>
 
+<hr>
+
 <h2>Technical Requirements:</h2>
 
 <ol>
