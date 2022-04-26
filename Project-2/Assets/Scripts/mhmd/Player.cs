@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int health;
 
+    [Tooltip("HealthBar Image")]
     public HealthBar healthBar;
 
     void Start(){
