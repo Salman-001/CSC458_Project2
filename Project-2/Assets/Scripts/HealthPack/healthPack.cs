@@ -9,6 +9,8 @@ public class healthPack : MonoBehaviour
 
     [SerializeField] Player player;
 
+    [SerializeField] HealthBar healthBar;
+
     // void Awake() {
     //     player = GetComponent<Player>();
     // }
@@ -30,6 +32,7 @@ public class healthPack : MonoBehaviour
                 Debug.Log("Cannot pick up the health pack");
             }else{
                 player.health += healthPackType.healthWeight;
+                healthBar.setHealth(player.health);
                 Debug.Log($"Player hit me, my health is  {player.health}");
                 Destroy(gameObject);
             }
