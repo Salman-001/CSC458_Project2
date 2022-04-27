@@ -29,14 +29,14 @@ public class AmmoBox : MonoBehaviour
         
         if(other.gameObject.tag == "Player"){
             
-            if(player.ammo + ammoBoxType.ammoWeight > 20){
-                Debug.Log("Cannot pick up the ammo box");
-            }else{
+            // if(player.ammo + ammoBoxType.ammoWeight > 20){
+            //     Debug.Log("Cannot pick up the ammo box");
+            // }else{
                 player.ammo += ammoBoxType.ammoWeight;
                 hud_bullets.setAmmo(player.ammo);
                 Debug.Log($"Player have {player.ammo} shells");
                 Destroy(gameObject);
-            }
+            // }
 
         }
 

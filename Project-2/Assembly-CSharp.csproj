@@ -40,9 +40,11 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" />
      <Compile Include="Assets/Scripts/HealthPack/healthTypeSO.cs" />
      <Compile Include="Assets/mira/Assets/Shared/Scripts/ProximityActivate.cs" />
+     <Compile Include="Assets/MenuScene-2/PauseMenu/PauseMenu.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01_UGUI.cs" />
      <Compile Include="Assets/Scripts/AudioManager.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
+     <Compile Include="Assets/Scripts/shellScriptPS.cs" />
      <Compile Include="Assets/Scripts/scoreScript.cs" />
      <Compile Include="Assets/Scripts/hudScript.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
@@ -63,6 +65,7 @@
      <Compile Include="Assets/mira/Assets/Player/ObjectPool.cs" />
      <Compile Include="Assets/mira/Assets/Shared/Scripts/SimpleCameraController.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
+     <Compile Include="Assets/MenuScene-2/OptionsMenu.cs" />
      <Compile Include="Assets/ScriptableObjects/health_pickup/HealthPickup.cs" />
      <Compile Include="Assets/Scripts/mhmd/Player.cs" />
      <Compile Include="Assets/Scripts/Player/playerHealth.cs" />
@@ -90,6 +93,7 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />
      <Compile Include="Assets/Scripts/Gun.cs" />
+     <Compile Include="Assets/MenuScene-2/MainMenu.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
      <Compile Include="Assets/Scripts/AmmoBox/AmmoBox.cs" />
@@ -830,6 +834,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{a9b91cbc-4494-ac13-5efd-67cedbe0bf93}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{36eca878-9092-d41f-80cc-86313082f414}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

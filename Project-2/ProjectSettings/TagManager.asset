@@ -11,6 +11,7 @@ TagManager:
   - barrel
   - Borders
   - enemy
+  - ground
   layers:
   - Default
   - TransparentFX
