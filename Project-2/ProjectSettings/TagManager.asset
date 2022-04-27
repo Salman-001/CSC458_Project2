@@ -10,6 +10,7 @@ TagManager:
   - turret
   - barrel
   - Borders
+  - enemy
   layers:
   - Default
   - TransparentFX

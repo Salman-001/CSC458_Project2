@@ -12,10 +12,15 @@ public class Player : MonoBehaviour
 
     [Tooltip("HealthBar Image")]
     public HealthBar healthBar;
+    
+    public int ammo;
+
+    public hudScript hud_bullets;
 
     void Start(){
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        ammo = 20;
     }
 
 
@@ -42,14 +47,18 @@ public class Player : MonoBehaviour
     }
 
     void Update() {
-        if(Input.GetKeyDown("p")){
-            Debug.Log(health);
+        if(Input.GetKeyDown("h")){
+            Debug.Log($"Your health is: {health}");
         }
 
         if(health < 0){
             health = 0;
             Debug.Log("You are dead");
-        } 
+        }
+
+        if(Input.GetKeyDown("space")){
+            shootShells();
+        }
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -64,5 +73,29 @@ public class Player : MonoBehaviour
         takeDamage(5);
         yield return new WaitForSeconds(1);
     }
+
+    private void ammoCount(){
+        ammo --;
+        hud_bullets.setAmmo(ammo);
+    }
+
+    private IEnumerator WaitAndShooot(){
+        ammoCount();
+        yield return new WaitForSeconds(5f);
+    }
+
+    private void shootShells(){
+        if(ammo > 0){
+            Debug.Log($"You have {ammo-1} shells");
+            StartCoroutine(WaitAndShooot());
+        }
+
+        if(ammo <= 0){
+            ammo = 0;
+            Debug.Log("You are out of ammo");
+        }
+    }
+
+    
 
 }

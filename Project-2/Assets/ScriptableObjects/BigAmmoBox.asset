@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1a9e0b0f3724bc095b9217bd341ab3, type: 3}
   m_Name: BigAmmoBox
   m_EditorClassIdentifier: 
-  ammoWeight: 10
+  ammoWeight: 20

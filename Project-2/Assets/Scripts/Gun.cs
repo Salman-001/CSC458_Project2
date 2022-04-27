@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
     public GameObject shellExplosion;
     ParticleSystem ps;
 
+    public Player player;
+
     private void Start() {
         ps = shellExplosion.GetComponent<ParticleSystem>();
     }
@@ -20,21 +22,19 @@ public class Gun : MonoBehaviour
     {
 
         if(Input.GetKeyDown("space")){
-Debug.Log("Test");
-            Shoot();
-
+            StartCoroutine(WaitAndShoot());
         }
         
     }
 
     void Shoot(){
-
-        ps.Play();
+        if(player.ammo > 0){
+            ps.Play();
+            FindObjectOfType<AudioManager>().Play("Firing");
+        }
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
-
-            Debug.Log(hit.transform.name);
 
             Target target = hit.transform.GetComponent<Target>();
 
@@ -44,5 +44,10 @@ Debug.Log("Test");
 
         }
 
+    }
+
+    private IEnumerator WaitAndShoot(){
+        Shoot();
+        yield return new WaitForSeconds(5f);
     }
 }

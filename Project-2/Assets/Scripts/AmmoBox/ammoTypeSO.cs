@@ -8,7 +8,7 @@ using UnityEngine;
 public class ammoTypeSO : ScriptableObject
 {
 
-    public int ammoWeight = 5;
+    public int ammoWeight = 10;
 
 
 }

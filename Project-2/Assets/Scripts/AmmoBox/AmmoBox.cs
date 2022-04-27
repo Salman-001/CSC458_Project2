@@ -5,7 +5,11 @@ using UnityEngine;
 public class AmmoBox : MonoBehaviour
 {
 
+    [SerializeField] Player player;
+
     [SerializeField] ammoTypeSO ammoBoxType;
+
+    [SerializeField] hudScript hud_bullets;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +20,8 @@ public class AmmoBox : MonoBehaviour
     }
 
     void Update() {
+
+
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -23,9 +29,14 @@ public class AmmoBox : MonoBehaviour
         
         if(other.gameObject.tag == "Player"){
             
-            // FindObjectOfType<Player>().health += ammoBoxType.ammoWeight;
-            Debug.Log("Player hit me");
-            Destroy(gameObject);
+            if(player.ammo + ammoBoxType.ammoWeight > 20){
+                Debug.Log("Cannot pick up the ammo box");
+            }else{
+                player.ammo += ammoBoxType.ammoWeight;
+                hud_bullets.setAmmo(player.ammo);
+                Debug.Log($"Player have {player.ammo} shells");
+                Destroy(gameObject);
+            }
 
         }
 
